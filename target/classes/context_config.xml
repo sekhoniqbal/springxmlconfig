@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="
+	   		http://www.springframework.org/schema/beans
+	   		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="beef" class="springtest.xmlconfig.beans.MakeLayer">
+		<constructor-arg value="beef"/>
+	</bean>
+	
+	<bean id="chicken" class="springtest.xmlconfig.beans.MakeLayer">
+		<constructor-arg value="chicken"/>
+	</bean>
+	<bean id="cheese" class="springtest.xmlconfig.beans.MakeLayer">
+		<constructor-arg value="cheese"/>
+	</bean>
+	<bean id="tomato" class="springtest.xmlconfig.beans.MakeLayer">
+		<constructor-arg value="tomato"/>
+	</bean>
+	<bean id="lettuce" class="springtest.xmlconfig.beans.MakeLayer">
+		<constructor-arg value="lettuce"/>
+	</bean>
+	
+	<bean id="chickenSandwich" class="springtest.xmlconfig.beans.ChickenSandwich">
+		<constructor-arg ref="lettuce"/>
+		<property name="chicken" ref="chicken" />
+		<property name="tomato" ref="tomato" />
+	</bean>
+
+</beans>
+
+
